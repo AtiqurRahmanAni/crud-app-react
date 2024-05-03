@@ -22,16 +22,21 @@ const NavBar = () => {
             <Nav.Link as={Link} to="/users">
               Users
             </Nav.Link>
-            {user ? (
-              <Button variant="outline-danger" onClick={logout}>
-                Logout
-              </Button>
-            ) : (
-              <Nav.Link as={Link} to="/login">
-                Login
-              </Nav.Link>
-            )}
+            <Nav.Link as={Link} to="/add">
+              Add User
+            </Nav.Link>
           </Nav>
+        </Navbar.Collapse>
+        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+          {user ? (
+            <Button variant="outline-danger" onClick={logout}>
+              Logout
+            </Button>
+          ) : (
+            <Nav.Link as={Link} to="/login">
+              Login
+            </Nav.Link>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>

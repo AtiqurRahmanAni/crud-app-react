@@ -7,18 +7,24 @@ import NavBar from "./components/NavBar";
 import PrivateRoute from "./utils/PrivateRoute";
 import PublicRoute from "./utils/PublicRoute";
 import { Toaster } from "react-hot-toast";
+import Layout from "./Layout";
+import AddUsers from "./pages/AddUsers";
 
 function App() {
   return (
     <>
       <NavBar />
       <Routes>
-        <Route element={<PublicRoute />}>
-          <Route path="/login" element={<Login />} />
-        </Route>
-        <Route element={<PrivateRoute />}>
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/users" element={<Users />} />
+        <Route element={<AddUsers />} path="/add"></Route>
+        <Route element={<Layout />} path="/">
+          <Route element={<PublicRoute />}>
+            <Route path="login" element={<Login />} />
+          </Route>
+
+          <Route element={<PrivateRoute />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="users" element={<Users />} />
+          </Route>
         </Route>
       </Routes>
       <Toaster position="bottom-right" />

@@ -8,13 +8,13 @@ import { useAuthContext } from "../contexts/AuthContext";
 import axiosInstance from "../utils/axiosInstance";
 import toast from "react-hot-toast";
 
-const Profile = () => {
-  const { user, setUser, handleError } = useAuthContext();
+const AddUsers = () => {
+  const { handleError } = useAuthContext();
   const [validated, setValidated] = useState(false);
   const [loading, setLoading] = useState(false);
   const [fields, setFields] = useState({
-    username: user.username,
-    displayName: user.displayName,
+    username: "",
+    displayName: "",
     password: "",
   });
 
@@ -33,21 +33,19 @@ const Profile = () => {
     if (username.length > 0 && password.length > 0 && displayName.length > 0) {
       try {
         setLoading(true);
-        const response = await axiosInstance.put(`/users/${user._id}`, {
+        const response = await axiosInstance.post("/users", {
           username,
           displayName,
           password,
         });
         const { data } = response;
-        setUser(data);
-        toast.success("Profile updated successfully");
+        toast.success(data.message);
       } catch (err) {
         handleError(err);
       } finally {
         setLoading(false);
       }
     }
-
     setValidated(true);
   };
 
@@ -99,7 +97,7 @@ const Profile = () => {
       <Row className="mb-3 justify-content-md-center">
         <Col md="auto">
           <Button type="submit" disabled={loading}>
-            {loading ? "Saving.." : "Save change"}
+            {loading ? "Adding.." : "Add"}
           </Button>
         </Col>
       </Row>
@@ -107,4 +105,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default AddUsers;

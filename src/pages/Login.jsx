@@ -48,7 +48,7 @@ const Login = () => {
         </Row>
         <Row className="mb-3 justify-content-md-center">
           <Col md="auto">
-            <Button type="submit">Submit form</Button>
+            <Button type="submit">Login</Button>
           </Col>
         </Row>
       </Form>
