@@ -15,7 +15,7 @@ function App() {
     <>
       <NavBar />
       <Routes>
-        <Route element={<AddUsers />} path="/add"></Route>
+        <Route element={<AddUsers />} path="/add" />
         <Route element={<Layout />} path="/">
           <Route element={<PublicRoute />}>
             <Route path="login" element={<Login />} />
