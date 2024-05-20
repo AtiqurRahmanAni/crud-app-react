@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     setUser(null);
     try {
-      const response = await axiosInstance.get("/auth/logout");
+      const response = await axiosInstance.post("/auth/logout", {});
       const { data } = response;
       toast.success(data.message);
       setUser(null);
