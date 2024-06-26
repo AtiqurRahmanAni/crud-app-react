@@ -1,8 +1,18 @@
-# React + Vite
+# A Simple React CRUD App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Backend of this web-app is available on this [link](https://github.com/AtiqurRahmanAni/node-express-api)
 
-Currently, two official plugins are available:
+### Features
+- User can add users
+- User can update his information 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### How to run this project
+- Clone the repository
+- Go to the project directory
+- create `.env` file
+- Copy everything from the `.env.example` file
+- Assign values.
+- Run `npm i` and then `npm run dev`
+- To run this project in production mode, first build the project using `npm run build`, and then use `npm run preview` to run.
+
+There is a `VITE_API_BASE_URL` variable in the `.env` file. The value of this variable will be the base url of the backend. For example, if the backend runs on `http://localhost:4000`, the value of the variable will be this url.
