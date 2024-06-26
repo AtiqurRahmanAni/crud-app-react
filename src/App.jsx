@@ -10,7 +10,7 @@ import { Toaster } from "react-hot-toast";
 import Layout from "./Layout";
 import AddUsers from "./pages/AddUsers";
 
-function App() {
+const App = () => {
   return (
     <>
       <NavBar />
@@ -30,6 +30,6 @@ function App() {
       <Toaster position="bottom-right" />
     </>
   );
-}
+};
 
 export default App;
